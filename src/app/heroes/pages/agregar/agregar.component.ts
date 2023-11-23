@@ -81,12 +81,14 @@ export class AgregarComponent implements OnInit {
     dialog.afterClosed().subscribe(
       (result) => {
         console.log(result);
-        this.heroesService.borrarHeroe(this.heroe.id!)
+        if (result) {
+          this.heroesService.borrarHeroe(this.heroe.id!)
             .subscribe(resp => {
-              console.log('Registro borrado', this.heroe);
+              // console.log('Registro borrado', this.heroe);
               this.router.navigate(['/heroes']);
               this.mostrarSnackBar("Registro Borrado")
             })
+        }
       }
     )
 

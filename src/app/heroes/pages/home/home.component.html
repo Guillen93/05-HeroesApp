@@ -28,7 +28,8 @@
         </button>
         <span class="spacer"></span>
         <!-- Defino esta clase en styles.css, es para que se vea a la derecha.-->
-        <button mat-button>
+        <span>{{auth.usuario}}</span>
+        <button mat-button (click)="logout()">
            Logout
         </button>
     </mat-toolbar>
